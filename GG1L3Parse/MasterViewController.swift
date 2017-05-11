@@ -12,7 +12,7 @@ import Parse
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var objects = [String]()
 
 
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
+        objects.insert(Date().description, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
@@ -73,7 +73,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
+        let object = objects[indexPath.row]
         cell.textLabel!.text = object.description
         return cell
     }
@@ -94,10 +94,15 @@ class MasterViewController: UITableViewController {
     
     func fetchPosts() {
         let query = PFQuery(className: "Post")
-        query.whereKey("text", hasSuffix: "t2")
+//        query.whereKey("text", hasSuffix: "t2")
         query.findObjectsInBackground { (objects, error) in
             if let objects = objects {
+                self.objects = objects.map({ (post) -> String in
+                    return post["text"] as? String ?? "ups"
+                })
+                
                 print(objects)
+                self.tableView.reloadData()
             }
         }
 //        if let objects = try? query.findObjects() {
