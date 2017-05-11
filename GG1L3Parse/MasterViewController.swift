@@ -1,4 +1,4 @@
-//
+//https://github.com/parse-community
 //  MasterViewController.swift
 //  GG1L3Parse
 //
@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class MasterViewController: UITableViewController {
 
@@ -18,7 +19,7 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
+//        navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
@@ -51,7 +52,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -110,6 +111,13 @@ class MasterViewController: UITableViewController {
 //        }
     }
 
+    @IBAction func showLoginForm(_ sender: UIBarButtonItem) {
+        let loginVC = PFLogInViewController()
+        present(loginVC, animated: true) { 
+            
+        }
+    }
+    
 
 }
 
