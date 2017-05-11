@@ -94,9 +94,15 @@ class MasterViewController: UITableViewController {
     
     func fetchPosts() {
         let query = PFQuery(className: "Post")
-        if let objects = try? query.findObjects() {
-            print(objects)
+        query.whereKey("text", hasSuffix: "t2")
+        query.findObjectsInBackground { (objects, error) in
+            if let objects = objects {
+                print(objects)
+            }
         }
+//        if let objects = try? query.findObjects() {
+//            print(objects)
+//        }
     }
 
 
