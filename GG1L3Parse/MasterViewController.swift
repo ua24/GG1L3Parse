@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MasterViewController: UITableViewController {
 
@@ -25,6 +26,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        fetchPosts()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +89,13 @@ class MasterViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    func fetchPosts() {
+        let query = PFQuery(className: "Post")
+        if let objects = try? query.findObjects() {
+            print(objects)
         }
     }
 
