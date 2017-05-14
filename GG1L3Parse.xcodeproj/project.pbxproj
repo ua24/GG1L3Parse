@@ -73,11 +73,11 @@
 		4CA4D1CF1EC4D4DA0010BE5F /* GG1L3Parse */ = {
 			isa = PBXGroup;
 			children = (
+				4CA4D1D61EC4D4DA0010BE5F /* Main.storyboard */,
 				4CA4D1D01EC4D4DA0010BE5F /* AppDelegate.swift */,
 				4CA4D1D21EC4D4DA0010BE5F /* MasterViewController.swift */,
 				4CA4D1D41EC4D4DA0010BE5F /* DetailViewController.swift */,
 				4CA4D1E41EC4E4050010BE5F /* AddPostViewController.swift */,
-				4CA4D1D61EC4D4DA0010BE5F /* Main.storyboard */,
 				4CA4D1D91EC4D4DA0010BE5F /* Assets.xcassets */,
 				4CA4D1DB1EC4D4DA0010BE5F /* LaunchScreen.storyboard */,
 				4CA4D1DE1EC4D4DA0010BE5F /* Info.plist */,
