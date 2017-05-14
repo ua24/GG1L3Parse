@@ -1,4 +1,5 @@
 //https://github.com/parse-community
+//http://docs.parseplatform.org/ios/guide/
 //  MasterViewController.swift
 //  GG1L3Parse
 //
@@ -13,26 +14,22 @@ import ParseUI
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [String]()
+    var objects = [PFObject]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        navigationItem.leftBarButtonItem = editButtonItem
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        navigationItem.rightBarButtonItem = addButton
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        if PFUser.current() == nil {
+            showLoginForm(UIBarButtonItem())
         }
         
-        fetchPosts()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
 //        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        fetchPosts()
         super.viewWillAppear(animated)
     }
 
@@ -41,11 +38,6 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(_ sender: Any) {
-        objects.insert(Date().description, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
-    }
 
     // MARK: - Segues
 
@@ -53,7 +45,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! DetailViewController)
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -98,9 +90,7 @@ class MasterViewController: UITableViewController {
 //        query.whereKey("text", hasSuffix: "t2")
         query.findObjectsInBackground { (objects, error) in
             if let objects = objects {
-                self.objects = objects.map({ (post) -> String in
-                    return post["text"] as? String ?? "ups"
-                })
+                self.objects = objects
                 
                 print(objects)
                 self.tableView.reloadData()

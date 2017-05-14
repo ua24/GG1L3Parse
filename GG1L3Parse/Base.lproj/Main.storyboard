@@ -40,17 +40,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
                                 <rect key="frame" x="20" y="231.5" width="280" height="17"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ACp-Na-ZTn" customClass="PFImageView">
+                                <rect key="frame" x="20" y="72" width="280" height="151"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ACp-Na-ZTn" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="3p3-eV-hZb"/>
+                            <constraint firstItem="ACp-Na-ZTn" firstAttribute="width" secondItem="0XM-y9-sOw" secondAttribute="width" id="OVX-Aj-uPY"/>
+                            <constraint firstItem="ACp-Na-ZTn" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="SJu-FN-2TF"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="ACp-Na-ZTn" secondAttribute="bottom" constant="8.5" id="VnL-xX-ulY"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
                         </constraints>
@@ -61,11 +68,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="imageBox" destination="ACp-Na-ZTn" id="4tv-cT-Jjc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708.75" y="128.75"/>
         </scene>
         <!--Detail-->
         <scene sceneID="G1m-Fd-FVT">
@@ -107,10 +115,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="mmS-Xy-UCa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zbx-9u-QEQ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zbx-9u-QEQ">
+                            <connections>
+                                <action selector="cancellPressed:" destination="K9a-BC-V4L" id="cUz-zl-dJM"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="done" systemItem="save" id="kl2-dv-nsz"/>
-                            <barButtonItem style="done" systemItem="camera" id="T0o-Mn-AeL"/>
+                            <barButtonItem style="done" systemItem="save" id="kl2-dv-nsz">
+                                <connections>
+                                    <action selector="savePressed:" destination="K9a-BC-V4L" id="Gak-i0-yfH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="done" systemItem="camera" id="T0o-Mn-AeL">
+                                <connections>
+                                    <action selector="addPhotoPressed:" destination="K9a-BC-V4L" id="dqu-OS-f6k"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -148,7 +168,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="JEX-9P-axG" kind="show" id="XNP-PY-db1">
+                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="XNP-PY-db1">
                                         <segue key="commit" inheritsFrom="parent" id="fN6-dp-SKN"/>
                                         <segue key="preview" inheritsFrom="commit" id="ONz-vo-oU3"/>
                                     </segue>
