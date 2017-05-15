@@ -14,11 +14,20 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var imageBox: PFImageView!
+    @IBOutlet weak var commentsTextView: UITextView!
+    @IBOutlet weak var addCommentTextView: UITextView!
+    
+    var post: PFObject? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
 
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
+        if let detail = post {
             if let label = detailDescriptionLabel {
                 label.text = (detail["text"] as! String)
                 if let imageFile = detail["photo"] as? PFFile {
@@ -28,6 +37,22 @@ class DetailViewController: UIViewController {
 //                        self.imageBox.image = UIImage(data: data!)
 //                    })
                 }
+                let commentsRelation = post?.relation(forKey: "comments")
+                let query = commentsRelation?.query()
+                query?.includeKey("user")
+                    query?.findObjectsInBackground(block: { (comments, error) in
+                    var commentsStr = ""
+                    if let comments = comments {
+                        comments.forEach({ (obj) in
+                            commentsStr += "------------------------\n"
+                            let text = obj["text"] as? String ?? "no text"
+                            let username = (obj["user"] as? PFUser ?? PFUser()).username!
+                            commentsStr += "\(username): \(text)"
+                            commentsStr += "\n------------------------\n"
+                        })
+                        self.commentsTextView.text = commentsStr
+                    }
+                })
             }
         }
     }
@@ -37,19 +62,43 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: PFObject? {
-        didSet {
-            // Update the view.
-            configureView()
+    
+    @IBAction func addCommentPressed(_ sender: UIBarButtonItem) {
+        
+        if addCommentTextView.text.characters.count < 1 {
+            return
         }
+        
+        let comment = PFObject(className: "Comment")
+        comment["text"] = addCommentTextView.text
+        comment["user"] = PFUser.current()
+        comment["post"] = self.post
+        let rel = post?.relation(forKey: "comments")
+            rel?.add(comment)
+        addCommentTextView.text = ""
+        sender.isEnabled = false
+        self.post!.saveInBackground(block: { (success, error) in
+            self.configureView()
+            PFObject.saveAll(inBackground: [comment]) { (success, error) in
+                sender.isEnabled = true
+                if !success {
+                    //    FIXME: - show alert
+                }
+                else {
+                    
+                }
+            }
+        })
+//        let myComment = PFObject(className: "Comment")
+//        myComment["text"] = addCommentTextView.text
+//        
+//        var user = PFUser.current()
+//        var relation = user?.relation(forKey: "likes")
+//        relation?.add(myComment)
+//        user?.saveInBackground()
+        
+        
+        
     }
-
-
 }
 

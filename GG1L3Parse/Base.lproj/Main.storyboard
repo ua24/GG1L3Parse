@@ -50,23 +50,53 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ACp-Na-ZTn" customClass="PFImageView">
                                 <rect key="frame" x="20" y="72" width="280" height="151"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4c-6T-YCb">
+                                <rect key="frame" x="16" y="256" width="288" height="177"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="97y-HW-r2V">
+                                <rect key="frame" x="16" y="441" width="288" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="6hA-cP-aPi"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ACp-Na-ZTn" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="3p3-eV-hZb"/>
+                            <constraint firstItem="97y-HW-r2V" firstAttribute="top" secondItem="H4c-6T-YCb" secondAttribute="bottom" constant="8" id="BdJ-qc-wLB"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="97y-HW-r2V" secondAttribute="bottom" id="FRa-7d-YsF"/>
+                            <constraint firstItem="H4c-6T-YCb" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="8" symbolic="YES" id="NNi-es-ApX"/>
                             <constraint firstItem="ACp-Na-ZTn" firstAttribute="width" secondItem="0XM-y9-sOw" secondAttribute="width" id="OVX-Aj-uPY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H4c-6T-YCb" secondAttribute="trailing" id="OaZ-oT-5Ub"/>
+                            <constraint firstItem="97y-HW-r2V" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="S3S-R5-gjP"/>
                             <constraint firstItem="ACp-Na-ZTn" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="SJu-FN-2TF"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="ACp-Na-ZTn" secondAttribute="bottom" constant="8.5" id="VnL-xX-ulY"/>
+                            <constraint firstItem="H4c-6T-YCb" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="imh-Co-mAh"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="97y-HW-r2V" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="tTp-22-Vgo"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="yvK-lu-hhd"/>
+                        <barButtonItem key="rightBarButtonItem" title="AddComment" id="yvK-lu-hhd">
+                            <connections>
+                                <action selector="addCommentPressed:" destination="JEX-9P-axG" id="q1q-x4-tgx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addCommentTextView" destination="97y-HW-r2V" id="DnK-tV-PQA"/>
+                        <outlet property="commentsTextView" destination="H4c-6T-YCb" id="qeV-rR-yhO"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                         <outlet property="imageBox" destination="ACp-Na-ZTn" id="4tv-cT-Jjc"/>
                     </connections>
