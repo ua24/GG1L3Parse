@@ -40,9 +40,11 @@ class DetailViewController: UIViewController {
                 let commentsRelation = post?.relation(forKey: "comments")
                 let query = commentsRelation?.query()
                 query?.includeKey("user")
+                query?.order(byAscending: "createdAt")
                     query?.findObjectsInBackground(block: { (comments, error) in
                     var commentsStr = ""
                     if let comments = comments {
+//                        comments.reverse()
                         comments.forEach({ (obj) in
                             commentsStr += "------------------------\n"
                             let text = obj["text"] as? String ?? "no text"
