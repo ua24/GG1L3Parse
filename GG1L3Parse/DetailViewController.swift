@@ -46,7 +46,7 @@ class DetailViewController: UIViewController {
                         comments.forEach({ (obj) in
                             commentsStr += "------------------------\n"
                             let text = obj["text"] as? String ?? "no text"
-                            let username = (obj["user"] as? PFUser ?? PFUser()).username!
+                            let username = (obj["user"] as? PFUser)?.username ?? "none"
                             commentsStr += "\(username): \(text)"
                             commentsStr += "\n------------------------\n"
                         })
@@ -73,27 +73,21 @@ class DetailViewController: UIViewController {
         comment["text"] = addCommentTextView.text
         comment["user"] = PFUser.current()
         comment["post"] = self.post
-        let rel = post?.relation(forKey: "comments")
-            rel?.add(comment)
-        addCommentTextView.text = ""
         sender.isEnabled = false
-        self.post!.saveInBackground(block: { (success, error) in
-            self.configureView()
-            PFObject.saveAll(inBackground: [comment]) { (success, error) in
-                sender.isEnabled = true
-                if !success {
-                    //    FIXME: - show alert
-                }
-                else {
-                    
-                }
-            }
+        self.addCommentTextView.text = ""
+        comment.saveInBackground(block: { (success, error) in
+            let rel = self.post!.relation(forKey: "comments")
+            rel.add(comment)
+            self.post!.saveInBackground(block: { (success, error) in
+                self.configureView()
+            })
         })
+        
 //        let myComment = PFObject(className: "Comment")
 //        myComment["text"] = addCommentTextView.text
-//        
+//        try! myComment.save()
 //        var user = PFUser.current()
-//        var relation = user?.relation(forKey: "likes")
+//        var relation = user?.relation(forKey: "comments")
 //        relation?.add(myComment)
 //        user?.saveInBackground()
         
