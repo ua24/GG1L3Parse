@@ -15,6 +15,7 @@
 		4CA4D1DA1EC4D4DA0010BE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA4D1D91EC4D4DA0010BE5F /* Assets.xcassets */; };
 		4CA4D1DD1EC4D4DA0010BE5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA4D1DB1EC4D4DA0010BE5F /* LaunchScreen.storyboard */; };
 		4CA4D1E51EC4E4050010BE5F /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4D1E41EC4E4050010BE5F /* AddPostViewController.swift */; };
+		4CF643411ECCCB7B0019787F /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF643401ECCCB7B0019787F /* VerificationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4CA4D1DC1EC4D4DA0010BE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CA4D1DE1EC4D4DA0010BE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA4D1E41EC4E4050010BE5F /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		4CF643401ECCCB7B0019787F /* VerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
 		7ED258ED30E987C822F69F20 /* Pods_GG1L3Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GG1L3Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C6CE100CA6235C7CE2C295 /* Pods-GG1L3Parse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG1L3Parse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GG1L3Parse/Pods-GG1L3Parse.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F2C99DB15566D5902318A1 /* Pods-GG1L3Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG1L3Parse.release.xcconfig"; path = "Pods/Target Support Files/Pods-GG1L3Parse/Pods-GG1L3Parse.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				4CA4D1D61EC4D4DA0010BE5F /* Main.storyboard */,
 				4CA4D1D01EC4D4DA0010BE5F /* AppDelegate.swift */,
+				4CF643401ECCCB7B0019787F /* VerificationVC.swift */,
 				4CA4D1D21EC4D4DA0010BE5F /* MasterViewController.swift */,
 				4CA4D1D41EC4D4DA0010BE5F /* DetailViewController.swift */,
 				4CA4D1E41EC4E4050010BE5F /* AddPostViewController.swift */,
@@ -129,6 +132,7 @@
 				TargetAttributes = {
 					4CA4D1CC1EC4D4DA0010BE5F = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = T6XM5LZMCJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -218,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA4D1E51EC4E4050010BE5F /* AddPostViewController.swift in Sources */,
+				4CF643411ECCCB7B0019787F /* VerificationVC.swift in Sources */,
 				4CA4D1D51EC4D4DA0010BE5F /* DetailViewController.swift in Sources */,
 				4CA4D1D31EC4D4DA0010BE5F /* MasterViewController.swift in Sources */,
 				4CA4D1D11EC4D4DA0010BE5F /* AppDelegate.swift in Sources */,
@@ -346,6 +351,7 @@
 			baseConfigurationReference = C9C6CE100CA6235C7CE2C295 /* Pods-GG1L3Parse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T6XM5LZMCJ;
 				INFOPLIST_FILE = GG1L3Parse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SmooshLabs.GG1L3Parse;
@@ -359,6 +365,7 @@
 			baseConfigurationReference = E8F2C99DB15566D5902318A1 /* Pods-GG1L3Parse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T6XM5LZMCJ;
 				INFOPLIST_FILE = GG1L3Parse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SmooshLabs.GG1L3Parse;
