@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Parse
+import CoreData
 
 class AddPostViewController: UIViewController {
 
-    var file: PFFile?
+//    var file: PFFile?
     
     @IBOutlet weak var textView: UITextView!
     
@@ -27,13 +27,13 @@ class AddPostViewController: UIViewController {
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         view.endEditing(true)
-        let post = PFObject(className: "Post")
-        post["text"] = textView.text!
-        post["user"] = PFUser.current()
-        if let file = self.file {
-            post["photo"] = file
-        }
-        post.saveEventually()
+        let post = Post(context: appDel.persistentContainer.viewContext)
+        post.text = textView.text!
+        post.user = appDel.currentUser
+//        if let file = self.file {
+//            post["photo"] = file
+//        }
+        appDel.saveContext()
         dismiss(animated: true, completion: nil)
     }
     @IBAction func cancellPressed(_ sender: UIBarButtonItem) {
@@ -47,11 +47,11 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as! UIImage
         let data = UIImageJPEGRepresentation(img, 0.3)
-        let parseFile = PFFile(data: data!, contentType: "jpg")
-        file = parseFile
-        parseFile.saveInBackground { (success, error) in
-            print("upload " + (success ? "success" : "error"))
-        }
+//        let parseFile = PFFile(data: data!, contentType: "jpg")
+//        file = parseFile
+//        parseFile.saveInBackground { (success, error) in
+//            print("upload " + (success ? "success" : "error"))
+//        }
         picker.dismiss(animated: true, completion: nil)
     }
 }

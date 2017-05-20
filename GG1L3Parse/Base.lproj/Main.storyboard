@@ -98,7 +98,6 @@
                         <outlet property="addCommentTextView" destination="97y-HW-r2V" id="DnK-tV-PQA"/>
                         <outlet property="commentsTextView" destination="H4c-6T-YCb" id="qeV-rR-yhO"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                        <outlet property="imageBox" destination="ACp-Na-ZTn" id="4tv-cT-Jjc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -265,7 +264,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-sV-UIC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-sV-UIC">
                                 <rect key="frame" x="112" y="113" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -278,6 +277,7 @@
                                 <state key="normal" title="verify"/>
                                 <connections>
                                     <action selector="verifyPressed:" destination="0yA-UD-d3y" eventType="touchUpInside" id="8yK-eR-JBc"/>
+                                    <segue destination="RMx-3f-FxP" kind="presentation" id="psj-vh-toS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-X5-pDU">
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="av5-bu-770" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="-951" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ChX-T4-Fxy">
@@ -326,7 +326,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou3-2Q-era" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125.625" y="128.75"/>
+            <point key="canvasLocation" x="-1826" y="-630"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
