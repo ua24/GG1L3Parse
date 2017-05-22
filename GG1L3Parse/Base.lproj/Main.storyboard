@@ -98,6 +98,7 @@
                         <outlet property="addCommentTextView" destination="97y-HW-r2V" id="DnK-tV-PQA"/>
                         <outlet property="commentsTextView" destination="H4c-6T-YCb" id="qeV-rR-yhO"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="imageBox" destination="ACp-Na-ZTn" id="UoI-cs-HXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

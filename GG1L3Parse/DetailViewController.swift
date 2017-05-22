@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-//    @IBOutlet weak var imageBox: PFImageView!
+    @IBOutlet weak var imageBox: UIImageView!
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var addCommentTextView: UITextView!
     
@@ -22,42 +22,39 @@ class DetailViewController: UIViewController {
             configureView()
         }
     }
-
-
+    
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = post {
             if let label = detailDescriptionLabel {
                 label.text = detail.text
-//                if let imageFile = detail["photo"] as? PFFile {
-//                    imageBox.file = imageFile
-//                    imageBox.loadInBackground()
-//                    imageFile.getDataInBackground(block: { (data, error) in
-//                        self.imageBox.image = UIImage(data: data!)
-//                    })
+                if let data = detail.photo as? Data {
+                    imageBox.image = UIImage(data: data)
                 }
-//                let commentsRelation = post?.relation(forKey: "comments")
-//                let query = commentsRelation?.query()
-//                query?.includeKey("user")
-//                query?.order(byAscending: "createdAt")
-//                    query?.findObjectsInBackground(block: { (comments, error) in
-//                    var commentsStr = ""
-//                    if let comments = comments {
-////                        comments.reverse()
-//                        comments.forEach({ (obj) in
-//                            commentsStr += "------------------------\n"
-//                            let text = obj["text"] as? String ?? "no text"
-//                            let username = (obj["user"] as? PFUser)?.username ?? "none"
-//                            commentsStr += "\(username): \(text)"
-//                            commentsStr += "\n------------------------\n"
-//                        })
-//                        self.commentsTextView.text = commentsStr
-//                    }
-//                })
-//            }
+                //                let commentsRelation = post?.relation(forKey: "comments")
+                //                let query = commentsRelation?.query()
+                //                query?.includeKey("user")
+                //                query?.order(byAscending: "createdAt")
+                //                    query?.findObjectsInBackground(block: { (comments, error) in
+                //                    var commentsStr = ""
+                //                    if let comments = comments {
+                ////                        comments.reverse()
+                //                        comments.forEach({ (obj) in
+                //                            commentsStr += "------------------------\n"
+                //                            let text = obj["text"] as? String ?? "no text"
+                //                            let username = (obj["user"] as? PFUser)?.username ?? "none"
+                //                            commentsStr += "\(username): \(text)"
+                //                            commentsStr += "\n------------------------\n"
+                //                        })
+                //                        self.commentsTextView.text = commentsStr
+                //                    }
+                //                })
+                //            }
+            }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -70,19 +67,19 @@ class DetailViewController: UIViewController {
             return
         }
         
-//        let comment = PFObject(className: "Comment")
-//        comment["text"] = addCommentTextView.text
-//        comment["user"] = PFUser.current()
-//        comment["post"] = self.post
-//        sender.isEnabled = false
-//        self.addCommentTextView.text = ""
-//        comment.saveInBackground(block: { (success, error) in
-//            let rel = self.post!.relation(forKey: "comments")
-//            rel.add(comment)
-//            self.post!.saveInBackground(block: { (success, error) in
-//                self.configureView()
-//            })
-//        })
+        //        let comment = PFObject(className: "Comment")
+        //        comment["text"] = addCommentTextView.text
+        //        comment["user"] = PFUser.current()
+        //        comment["post"] = self.post
+        //        sender.isEnabled = false
+        //        self.addCommentTextView.text = ""
+        //        comment.saveInBackground(block: { (success, error) in
+        //            let rel = self.post!.relation(forKey: "comments")
+        //            rel.add(comment)
+        //            self.post!.saveInBackground(block: { (success, error) in
+        //                self.configureView()
+        //            })
+        //        })
         
         
     }
