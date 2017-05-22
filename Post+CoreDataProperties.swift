@@ -19,7 +19,7 @@ extension Post {
     @NSManaged public var createdAt: NSDate?
     @NSManaged public var photo: NSData?
     @NSManaged public var text: String?
-    @NSManaged public var comments: NSSet?
+    @NSManaged public var comments: Set<Comment>?
     @NSManaged public var user: User?
 
 }

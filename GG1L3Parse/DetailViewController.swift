@@ -32,25 +32,20 @@ class DetailViewController: UIViewController {
                 if let data = detail.photo as? Data {
                     imageBox.image = UIImage(data: data)
                 }
-                //                let commentsRelation = post?.relation(forKey: "comments")
-                //                let query = commentsRelation?.query()
-                //                query?.includeKey("user")
-                //                query?.order(byAscending: "createdAt")
-                //                    query?.findObjectsInBackground(block: { (comments, error) in
-                //                    var commentsStr = ""
-                //                    if let comments = comments {
-                ////                        comments.reverse()
-                //                        comments.forEach({ (obj) in
-                //                            commentsStr += "------------------------\n"
-                //                            let text = obj["text"] as? String ?? "no text"
-                //                            let username = (obj["user"] as? PFUser)?.username ?? "none"
-                //                            commentsStr += "\(username): \(text)"
-                //                            commentsStr += "\n------------------------\n"
-                //                        })
-                //                        self.commentsTextView.text = commentsStr
-                //                    }
-                //                })
-                //            }
+                let commentsRelation = post?.comments
+                let comments = commentsRelation?.sorted(by: { (c1, c2) -> Bool in
+                    return c1.createdAt?.timeIntervalSince1970 ?? 0 < c2.createdAt?.timeIntervalSince1970 ?? 0
+                })
+                var commentsStr = ""
+                comments!.forEach({ (obj) in
+                    commentsStr += "------------------------\n"
+                    let text = obj.text as? String ?? "no text"
+                    //                                            let username = (obj as? User)?.username ?? "none"
+                    let username = " s"
+                    commentsStr += "\(username): \(text)"
+                    commentsStr += "\n------------------------\n"
+                })
+                self.commentsTextView.text = commentsStr
             }
         }
     }
@@ -67,19 +62,16 @@ class DetailViewController: UIViewController {
             return
         }
         
-        //        let comment = PFObject(className: "Comment")
-        //        comment["text"] = addCommentTextView.text
-        //        comment["user"] = PFUser.current()
-        //        comment["post"] = self.post
-        //        sender.isEnabled = false
-        //        self.addCommentTextView.text = ""
-        //        comment.saveInBackground(block: { (success, error) in
-        //            let rel = self.post!.relation(forKey: "comments")
-        //            rel.add(comment)
-        //            self.post!.saveInBackground(block: { (success, error) in
-        //                self.configureView()
-        //            })
-        //        })
+        let comment = Comment(context: dbContext)
+        comment.text = addCommentTextView.text
+        comment.createdAt = Date() as NSDate
+        //                comment.use = PFUser.current()
+        //                comment.pos = self.post
+        //                sender.isEnabled = false
+        self.addCommentTextView.text = ""
+        post?.addToComments(comment)
+        try! dbContext.save()
+        self.configureView()
         
         
     }

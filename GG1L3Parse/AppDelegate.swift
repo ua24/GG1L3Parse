@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 let appDel = UIApplication.shared.delegate as! AppDelegate
+var dbContext: NSManagedObjectContext {
+    return appDel.persistentContainer.viewContext
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
