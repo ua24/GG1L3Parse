@@ -11,7 +11,7 @@ import CoreData
 
 class AddPostViewController: UIViewController {
 
-//    var file: PFFile?
+    var file: Data?
     
     @IBOutlet weak var textView: UITextView!
     
@@ -30,9 +30,9 @@ class AddPostViewController: UIViewController {
         let post = Post(context: appDel.persistentContainer.viewContext)
         post.text = textView.text!
         post.user = appDel.currentUser
-//        if let file = self.file {
-//            post["photo"] = file
-//        }
+        if let file = self.file {
+            post.photo = file as NSData
+        }
         appDel.saveContext()
         dismiss(animated: true, completion: nil)
     }
@@ -48,7 +48,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         let img = info[UIImagePickerControllerOriginalImage] as! UIImage
         let data = UIImageJPEGRepresentation(img, 0.3)
 //        let parseFile = PFFile(data: data!, contentType: "jpg")
-//        file = parseFile
+        file = data
 //        parseFile.saveInBackground { (success, error) in
 //            print("upload " + (success ? "success" : "error"))
 //        }
