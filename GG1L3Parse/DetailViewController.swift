@@ -29,19 +29,18 @@ class DetailViewController: UIViewController {
         if let detail = post {
             if let label = detailDescriptionLabel {
                 label.text = detail.text
-                if let data = detail.photo as? Data {
-                    imageBox.image = UIImage(data: data)
+                if let data = detail.photo {
+                    imageBox.image = UIImage(data: data as Data)
                 }
                 let commentsRelation = post?.comments
                 let comments = commentsRelation?.sorted(by: { (c1, c2) -> Bool in
                     return c1.createdAt?.timeIntervalSince1970 ?? 0 < c2.createdAt?.timeIntervalSince1970 ?? 0
                 })
                 var commentsStr = ""
-                comments!.forEach({ (obj) in
+                comments!.forEach({ (comment) in
                     commentsStr += "------------------------\n"
-                    let text = obj.text as? String ?? "no text"
-                    //                                            let username = (obj as? User)?.username ?? "none"
-                    let username = " s"
+                    let text = comment.text ?? "no text"
+                    let username = comment.user?.username ?? "none"
                     commentsStr += "\(username): \(text)"
                     commentsStr += "\n------------------------\n"
                 })
@@ -65,7 +64,7 @@ class DetailViewController: UIViewController {
         let comment = Comment(context: dbContext)
         comment.text = addCommentTextView.text
         comment.createdAt = Date() as NSDate
-        //                comment.use = PFUser.current()
+        comment.user = appDel.currentUser
         //                comment.pos = self.post
         //                sender.isEnabled = false
         self.addCommentTextView.text = ""

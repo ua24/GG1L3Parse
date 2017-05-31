@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		238C7D055BDF071F9E8681E6 /* Pods_GG1L3Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED258ED30E987C822F69F20 /* Pods_GG1L3Parse.framework */; };
+		4C0B52C21ED35E3D0080886F /* ooo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B52C11ED35E3D0080886F /* ooo.png */; };
 		4CA4D1D11EC4D4DA0010BE5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4D1D01EC4D4DA0010BE5F /* AppDelegate.swift */; };
 		4CA4D1D31EC4D4DA0010BE5F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4D1D21EC4D4DA0010BE5F /* MasterViewController.swift */; };
 		4CA4D1D51EC4D4DA0010BE5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4D1D41EC4D4DA0010BE5F /* DetailViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0B52C11ED35E3D0080886F /* ooo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ooo.png; sourceTree = "<group>"; };
 		4CA4D1CD1EC4D4DA0010BE5F /* GG1L3Parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GG1L3Parse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA4D1D01EC4D4DA0010BE5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA4D1D21EC4D4DA0010BE5F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4CA4D1D21EC4D4DA0010BE5F /* MasterViewController.swift */,
 				4CA4D1D41EC4D4DA0010BE5F /* DetailViewController.swift */,
 				4CA4D1E41EC4E4050010BE5F /* AddPostViewController.swift */,
+				4C0B52C11ED35E3D0080886F /* ooo.png */,
 				4CA4D1D91EC4D4DA0010BE5F /* Assets.xcassets */,
 				4CA4D1DB1EC4D4DA0010BE5F /* LaunchScreen.storyboard */,
 				4CA4D1DE1EC4D4DA0010BE5F /* Info.plist */,
@@ -192,6 +195,7 @@
 				4CA4D1DD1EC4D4DA0010BE5F /* LaunchScreen.storyboard in Resources */,
 				4CA4D1DA1EC4D4DA0010BE5F /* Assets.xcassets in Resources */,
 				4CA4D1D81EC4D4DA0010BE5F /* Main.storyboard in Resources */,
+				4C0B52C21ED35E3D0080886F /* ooo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

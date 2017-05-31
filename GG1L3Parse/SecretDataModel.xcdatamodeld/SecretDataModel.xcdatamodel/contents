@@ -3,6 +3,7 @@
     <entity name="Comment" representedClassName=".Comment" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="likes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="Post" representedClassName=".Post" syncable="YES">
@@ -10,6 +11,7 @@
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" syncable="YES"/>
+        <relationship name="likes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
@@ -18,8 +20,8 @@
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Comment" positionX="-18" positionY="-63" width="128" height="88"/>
-        <element name="Post" positionX="331" positionY="-21" width="128" height="118"/>
+        <element name="Comment" positionX="-18" positionY="-63" width="128" height="103"/>
+        <element name="Post" positionX="331" positionY="-21" width="128" height="133"/>
         <element name="User" positionX="117" positionY="173" width="128" height="88"/>
     </elements>
 </model>

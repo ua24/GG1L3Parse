@@ -2,7 +2,7 @@
 //  Comment+CoreDataProperties.swift
 //  GG1L3Parse
 //
-//  Created by Ivan Vasilevich on 5/19/17.
+//  Created by Ivan Vasilevich on 5/22/17.
 //  Copyright © 2017 Smoosh Labs. All rights reserved.
 //
 
@@ -18,5 +18,6 @@ extension Comment {
 
     @NSManaged public var createdAt: NSDate?
     @NSManaged public var text: String?
+    @NSManaged public var user: User?
 
 }
