@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Detail view content goes here"; ObjectID = "0XM-y9-sOw"; */
+"0XM-y9-sOw.text" = "Зміст Детальний вид тут йде";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "0yA-UD-d3y"; */
+"0yA-UD-d3y.title" = "подробиця";
+
+/* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "69I-TZ-a4J"; */
+"69I-TZ-a4J.title" = "Ввійти";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "майстер";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "97y-HW-r2V"; */
+"97y-HW-r2V.text" = "Lorem Ipsum біль сидять ер інвестори Lamet, consectetaur Cillium знижки є цілим і неушкодженим, і життєздатність, так що праця і горе, але деякі важливі речі, щоб зробити eiusmod. Протягом багатьох років я прийшов, хто nostrud aliquip з неї переваги вправ, так що зусилля по стимулюванню, якщо шкільний округ і довговічність. Хочете бути біль в cupidatat cillum була піддана критиці в DUIs і ін Dolore MAGNA бігти не виробляє результуючу задоволення. Excepteur cupidatat чорношкірі НЕ excepteur, заспокійливу для душі, тобто, вони покинули загальні обов'язки тих, хто винен у ваших проблемах. Для Безкоштовних свідомого фактора обидва покарання закону відновлення civiuda.";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Arm-wq-HPj"; */
+"Arm-wq-HPj.text" = "титульний";
+
+/* Class = "UIButton"; normalTitle = "verify"; ObjectID = "Du8-pE-KO8"; */
+"Du8-pE-KO8.normalTitle" = "перевірити";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "H4c-6T-YCb"; */
+"H4c-6T-YCb.text" = "Lorem Ipsum біль сидять ер інвестори Lamet, consectetaur Cillium знижки є цілим і неушкодженим, і життєздатність, так що праця і горе, але деякі важливі речі, щоб зробити eiusmod. Протягом багатьох років я прийшов, хто nostrud aliquip з неї переваги вправ, так що зусилля по стимулюванню, якщо шкільний округ і довговічність. Хочете бути біль в cupidatat cillum була піддана критиці в DUIs і ін Dolore MAGNA бігти не виробляє результуючу задоволення. Excepteur cupidatat чорношкірі НЕ excepteur, заспокійливу для душі, тобто, вони покинули загальні обов'язки тих, хто винен у ваших проблемах. Для Безкоштовних свідомого фактора обидва покарання закону відновлення civiuda.";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "подробиця";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "майстер";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "UB6-Zu-XeD"; */
+"UB6-Zu-XeD.title" = "подробиця";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "XwV-up-KIY"; */
+"XwV-up-KIY.text" = "Lorem Ipsum біль сидять ер інвестори Lamet, consectetaur Cillium знижки є цілим і неушкодженим, і життєздатність, так що праця і горе, але деякі важливі речі, щоб зробити eiusmod. Протягом багатьох років я прийшов, хто nostrud aliquip з неї переваги вправ, так що зусилля по стимулюванню, якщо шкільний округ і довговічність. Хочете бути біль в cupidatat cillum була піддана критиці в DUIs і ін Dolore MAGNA бігти не виробляє результуючу задоволення. Excepteur cupidatat чорношкірі НЕ excepteur, заспокійливу для душі, тобто, вони покинули загальні обов'язки тих, хто винен у ваших проблемах. Для Безкоштовних свідомого фактора обидва покарання закону відновлення civiuda.";
+
+/* Class = "UINavigationItem"; title = "Master"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "майстер";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "dkQ-vB-tMr"; */
+"dkQ-vB-tMr.text" = "Lorem Ipsum біль сидять ер інвестори Lamet, consectetaur Cillium знижки є цілим і неушкодженим, і життєздатність, так що праця і горе, але деякі важливі речі, щоб зробити eiusmod. Протягом багатьох років я прийшов, хто nostrud aliquip з неї переваги вправ, так що зусилля по стимулюванню, якщо шкільний округ і довговічність. Хочете бути біль в cupidatat cillum була піддана критиці в DUIs і ін Dolore MAGNA бігти не виробляє результуючу задоволення. Excepteur cupidatat чорношкірі НЕ excepteur, заспокійливу для душі, тобто, вони покинули загальні обов'язки тих, хто винен у ваших проблемах. Для Безкоштовних свідомого фактора обидва покарання закону відновлення civiuda.";
+
+/* Class = "UITextField"; text = "user1"; ObjectID = "eeD-sV-UIC"; */
+"eeD-sV-UIC.text" = "користувач 1";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "g8t-X5-pDU"; */
+"g8t-X5-pDU.normalTitle" = "послати";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "подробиця";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "mmS-Xy-UCa"; */
+"mmS-Xy-UCa.title" = "подробиця";
+
+/* Class = "UIBarButtonItem"; title = "NewPost"; ObjectID = "ohI-bq-QAo"; */
+"ohI-bq-QAo.title" = "нове повідомлення";
+
+/* Class = "UIBarButtonItem"; title = "AddComment"; ObjectID = "yvK-lu-hhd"; */
+"yvK-lu-hhd.title" = "Додати коментар";
