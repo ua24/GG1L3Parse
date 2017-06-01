@@ -54,6 +54,8 @@ class DetailViewController: UIViewController {
     navigationItem.title = NSLocalizedString("DETAIL_VC_TITLE", comment: "less than 10 charaters")
     // Do any additional setup after loading the view, typically from a nib.
     configureView()
+    let imgName = "img" + (NSLocale.current.languageCode ?? "en")
+    
   }
   
   @IBAction func addCommentPressed(_ sender: UIBarButtonItem) {

@@ -54,7 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return true
     }
     
-   
+  
+  func applicationWillResignActive(_ application: UIApplication) {
+    print("qwertyuiop")
+  }
     
     // MARK: - Core Data Saving support
     func saveContext () {

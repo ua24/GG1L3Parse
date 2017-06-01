@@ -1,0 +1,23 @@
+PODS:
+  - Bolts/Tasks (1.8.4)
+  - Parse (1.14.4):
+    - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - SinchVerification-Swift (2.0.3)
+
+DEPENDENCIES:
+  - Parse
+  - ParseUI
+  - SinchVerification-Swift
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  SinchVerification-Swift: 567aaf9cb29c55a115faecb6016fea25a7f37688
+
+PODFILE CHECKSUM: 351f63215fb8dfef53fe2dcd1c4c2d1505f3c23f
+
+COCOAPODS: 1.2.0
